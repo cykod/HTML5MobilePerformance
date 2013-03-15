@@ -290,7 +290,6 @@ Quintus.Presentation = function(Q) {
     stage.point("Single touch controls.");
     stage.point("Partial Updates with Dirty Rectangles");
     stage.point("Barely pushing out full-screen refreshes");
-    stage.point("*Firefox for Android is available");
   });
 
   Q.slide(15,function(stage) {
@@ -305,7 +304,7 @@ Quintus.Presentation = function(Q) {
     stage.point("...and wrap\nwith CocoonJS");
   });
 
-  Q.slide(15,function(stage) {
+  Q.slide(16,function(stage) {
     stage.tiles("level0.json");
     stage.background("background2.png");
 
@@ -321,7 +320,7 @@ Quintus.Presentation = function(Q) {
   });
 
 
-  Q.slide(16,function(stage) {
+  Q.slide(17,function(stage) {
     stage.tiles("level0.json");
     stage.background("background4.png");
 
@@ -362,7 +361,7 @@ Quintus.Presentation = function(Q) {
   });
 
 
-  Q.slide(17,function(stage) {
+  Q.slide(18,function(stage) {
     stage.tiles("level0.json");
     stage.background("background4.png");
 
@@ -370,12 +369,13 @@ Quintus.Presentation = function(Q) {
     stage.title("Lazy man's optimization");
     stage.point("For lowered powered devices:");
     stage.point("Divide the Canvas width and height by two.");
+    stage.point("Leave the CSS Width and Height the same");
     stage.point("Use context.scale(0.5,0.5) ");
     stage.point("Voila! Pixelated images with same assets");
   });
 
 
-  Q.slide(18,function(stage) {
+  Q.slide(19,function(stage) {
     stage.tiles("level0.json");
     stage.background("background4.png");
 
@@ -386,27 +386,28 @@ Quintus.Presentation = function(Q) {
     stage.point("One half resolution");
     stage.point("Use context.scale(2,2) for half resolution");
     stage.point("Or drawImage with a 2x destination size");
+    stage.point("And keep a 2X for Retina....(I'm joking)");
   });
 
-  Q.slide(19,function(stage) {
+  Q.slide(20,function(stage) {
     stage.tiles("level0.json");
     stage.background("background5.png");
 
     stage.points();
     stage.title("Partial Updates /\nDirty Rectangles");
     stage.point("Programming like it's 1990...");
+    stage.point("Devices (esp. Android) still fill-rate limited.");
     stage.point("1. Clear or Redraw backgrounds at sprite locations");
     stage.point("2. Update Sprites");
     stage.point("3. Redraw Sprites");
     stage.point("Or, use with...");
   });
 
-  Q.slide(20,function(stage) {
+  Q.slide(21,function(stage) {
     stage.tiles("level0.json");
     stage.background("background4.png");
 
-    stage.points();
-    stage.insert(new Q.Sprite({ asset: "finger-forest.png", x:260, y: 375, type:0, z:0 }));
+    stage.insert(new Q.Sprite({ asset: "finger-forest.png", x:260, y: 300, type:0, z:0, opacity: 0 })).add("tween").animate({ opacity: 1 });
     stage.title("Canvas Layers");
     stage.point("Multiple canvas stacked on top of each other");
     stage.point("One for background, One for sprites, one for HUD");
@@ -414,7 +415,7 @@ Quintus.Presentation = function(Q) {
   });
 
 
-  Q.slide(21,function(stage) {
+  Q.slide(22,function(stage) {
     stage.tiles("level0.json");
     stage.background("background5.png");
 
@@ -426,30 +427,31 @@ Quintus.Presentation = function(Q) {
     stage.point("Level 3: Half-screen refreshes");
   });
 
-  Q.slide(22,function(stage) {
+  Q.slide(23,function(stage) {
     stage.tiles("level0.json");
     stage.background("background5.png");
 
     stage.points();
     stage.title("Remove DOM Elements");
     stage.point("Mobile browsers are happiest at native resolution");
-    stage.point("Full-screen, no DOM elements layering");
+    stage.point("So render full-screen, no DOM elements layering, and");
     stage.point("At meta-viewport width=device-width");
     stage.point("DOM Elements, especially updating ones, take a toll");
+    stage.point("Chrome for Android has DOM Layering issues\n(Fixed in Beta)");
   });
 
-  Q.slide(23,function(stage) {
+  Q.slide(24,function(stage) {
     stage.tiles("level0.json");
     stage.background("background5.png");
 
     stage.points();
     stage.title("Pre-rendering Elements");
     stage.point("Canvases are happy to work off-screen");
-    stage.point("Cache expensive text calls into buffers");
+    stage.point("Cache expensive fillText calls into buffers");
     stage.point("Batch tile calls and the like into single buffers");
   });
 
-  Q.slide(23,function(stage) {
+  Q.slide(25,function(stage) {
     stage.tiles("level0.json");
     stage.background("background5.png");
 
@@ -462,7 +464,7 @@ Quintus.Presentation = function(Q) {
     stage.point("Don't waste pixels with empty space");
   });
 
- Q.slide(24,function(stage) {
+ Q.slide(26,function(stage) {
     stage.tiles("level0.json");
     var bg = stage.background("background3.png");
     bg.p.opacity = 0.6;
@@ -475,6 +477,24 @@ Quintus.Presentation = function(Q) {
 
     stage.insert(iframe);
   }); 
+
+
+ Q.slide(27,function(stage) {
+    stage.tiles("level0.json");
+    stage.background("background5.png");
+
+    stage.nextPoint = 150;
+    stage.title("Thanks!").stop().set({opacity: 1});
+    stage.title("Pascal Rettig @cykod").set({ opacity: 1});
+    stage.title("Questions?").set({ opacity: 1});
+
+    stage.on("20%",function() {
+      Q("Presenter").first().add("tween").set({ angle: 0, standing: -0.5 }).animate({ angle: 45, y: -500, x: 1023 },1.5,null).del("2d");
+    });
+ });
+
+
+
 
   // Whatever assets you'll need
   Q.preload([
@@ -489,22 +509,6 @@ Quintus.Presentation = function(Q) {
     "mobile-browser-share.png", "ios-versions.png", "android.png", "android-logo.png",
     "canvas-vs-css.png", 'finger-forest.png'
   ]);
-
-
- Q.slide(25,function(stage) {
-    stage.tiles("level0.json");
-    stage.background("background5.png");
-
-    stage.nextPoint = 150;
-    stage.title("Thanks!").stop().set({opacity: 1});
-    stage.title("Pascal Rettig @cykod").set({ opacity: 1});
-    stage.title("Questions?").set({ opacity: 1});
-
-    stage.on("20%",function() {
-      Q("Presenter").first().add("tween").set({ angle: 0, standing: -0.5 }).animate({ angle: 45, y: -500, x: 1023 },1.5,null).del("2d");
-    });
- });
-
 
   // Called after preload
   Q.presentationSetup = function() {
