@@ -130,7 +130,7 @@ Quintus.Presentation = function(Q) {
     stage.title("But HTML5 Mobile is ready...");
     stage.point("... to cross the trough of disillusionment.");
 
-    hype.animate({ opacity: 1 },1,null, { delay: 3 });
+    hype.animate({ opacity: 1 },1, Q.Easing.Quadratic.Out, { delay: 3 });
 
   });
 
@@ -507,7 +507,7 @@ Quintus.Presentation = function(Q) {
     "moneybg.jpg", "html5sponsors.png", "book.jpg", "background2.png", "background3.png",
     "background4.png","background5.png",
     "mobile-browser-share.png", "ios-versions.png", "android.png", "android-logo.png",
-    "canvas-vs-css.png", 'finger-forest.png'
+    "canvas-vs-css.png", 'finger-forest.png', "hype_cycle.png"
   ]);
 
   // Called after preload
