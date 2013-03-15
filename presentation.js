@@ -2,30 +2,24 @@ Quintus.Presentation = function(Q) {
 
   Q.slide(1,function(stage) {
 
-    Q.input.on("action",function() { 
-
       stage.tiles("level0.json");
       stage.background("game-background.png");
 
-      var sign = stage.insert(new Q.Sprite({ asset: "sign.png", x: 512 - 388/2, y: -640, type: 0 }).add("tween"));
+      setTimeout(function() { 
 
-      sign.animate({ y: -100 }, 2, Q.Easing.Quadratic.Out, { delay: 0.5, z: 3 })
+      var sign = stage.insert(new Q.Sprite({ asset: "sign.png", x: 512 - 388/2, y: -600, type: 0 }))
+                      .add("tween")
+                      .animate({ y: -100 }, 2, Q.Easing.Quadratic.Out, {  z: 3 });
+
+      },400);
 
       stage.presenter.add("playformerControls, 2d");
       stage.presenter.add("tween");
 
-      stage.presenter.animate({ y: -512, vy: 0 },2); 
-
       stage.insert(new Q.Sprite({ sheet: "cab", x: 500, y: 685 - 158, type: 0, z: 11 }));
       stage.insert(new Q.Sprite({ sheet: "hydrant", x: 100, y: 685 - 110, type: 0, z: 11 }));
-    });
-
 
     stage.presenter.p.y = -1024;
-    stage.presenter.del("playformerControls, 2d");
-
-    stage.background("html5logo.png");
-
   });
 
   Q.slide(2,function(stage) {
@@ -38,15 +32,15 @@ Quintus.Presentation = function(Q) {
 
     stage.insert(new Q.Sprite({ asset: "h5gdcom.png", x:150, y: -200 })).add("tween").animate({ y: 550 }, 1,Q.Easing.Quadratic.Out, { delay: 0.5 });
     stage.on("10%",function() {
-      stage.insert(new Q.Sprite({ asset: "html5gamedev.jpg", x: 430, y: -200 })).add("tween").animate({ y: 450 },1,Q.Easing.Quadratic.Out);
+      stage.insert(new Q.Sprite({ asset: "html5gamedev.jpg", x: 430, y: -200 })).add("tween").animate({ y: 490 },1,Q.Easing.Quadratic.Out);
     });
 
     stage.on("30%",function() {
-      stage.insert(new Q.Sprite({ asset: "book.jpg", x: 620, y: -200 })).add("tween").animate({ y: 400 },1,Q.Easing.Quadratic.Out);
+      stage.insert(new Q.Sprite({ asset: "book.jpg", x: 620, y: -200 })).add("tween").animate({ y: 440 },1,Q.Easing.Quadratic.Out);
     });
 
     stage.on("50%",function() {
-      stage.insert(new Q.Sprite({ asset: "quintus.png", x:800, y: -200 })).add("tween").animate({ y: 300 });
+      stage.insert(new Q.Sprite({ asset: "quintus.png", x:790, y:-200 })).add("tween").animate({ y: 440 });
     });
 
   });
