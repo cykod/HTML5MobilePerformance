@@ -159,7 +159,7 @@ Quintus.Presentation = function(Q) {
     }
 
     stage.on('prestep',function() {
-
+      if(Q.stats) { Q.stats.end(); Q.stats.begin(); }
     })
 
 
@@ -489,6 +489,21 @@ Quintus.Presentation = function(Q) {
     "mobile-browser-share.png", "ios-versions.png", "android.png", "android-logo.png",
     "canvas-vs-css.png", 'finger-forest.png'
   ]);
+
+
+ Q.slide(25,function(stage) {
+    stage.tiles("level0.json");
+    stage.background("background5.png");
+
+    stage.nextPoint = 150;
+    stage.title("Thanks!").stop().set({opacity: 1});
+    stage.title("Pascal Rettig @cykod").set({ opacity: 1});
+    stage.title("Questions?").set({ opacity: 1});
+
+    stage.on("20%",function() {
+      Q("Presenter").first().add("tween").set({ angle: 0, standing: -0.5 }).animate({ angle: 45, y: -500, x: 1023 },1.5,null).del("2d");
+    });
+ });
 
 
   // Called after preload
