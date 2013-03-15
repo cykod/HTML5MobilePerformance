@@ -395,8 +395,8 @@ Quintus.GameNote = function(Q) {
     Q.input.drawButtons = Q.drawInputButtons;
 
     if(Q.touchDevice) {
-      document.getElementById("attribution").style.display = "none";
-      document.getElementById("social").style.display = "none";
+      //document.getElementById("attribution").style.display = "none";
+      //document.getElementById("social").style.display = "none";
     }
 
     Q.preload(function() {
