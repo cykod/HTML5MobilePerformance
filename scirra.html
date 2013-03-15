@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<h3><a  href='https://www.scirra.com/blog/107/boosting-mobile-html5-game-performance-with-webgl'>Boosting mobile HTML5 Game Performance With WebGL</a></h3>
+
+<p>The score for this test is the average framerate over a 60 second period of automated play.</p>
+
+<style>
+a { text-decoration:none; color:black; }
+table.perfresults {
+	margin-left: 10px;
+	width: 600px;
+}
+
+.perfresults td {
+	border-bottom: solid 1px #ddd;
+	font-size: 0.9em;
+	padding: 5px;
+}
+
+.perfnotes {
+	font-size: 0.7em !important;
+	width: 200px;
+}
+
+.perfscoretitle {
+	color: black;
+	width: 200px;
+}
+
+.perfscore {
+	width: 200px;
+	margin-right: 5px;
+	color: #fff;
+}
+
+.perfbar {
+	background-color: #292;
+	height: 25px;
+
+	float: left;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding:2px;
+	padding-left:7px;
+	font-size:1em;
+	line-height:25px;
+}
+
+.perfright {
+	color:#000;
+	font-weight: bold;
+}
+
+.perftoprow th {
+	background-color: #efefef;
+	text-shadow: 0 1px 1px #fff;
+}
+</style>
+
+<table class="perfresults" cellspacing="0">
+<tbody><tr class="perftoprow"><th><strong>Device</strong></th>	<th><strong>Test</strong></th>	 <th class="perfscoretitle"><strong>Avg FPS</strong></th></tr>
+<tr><td>SGS3 / Chrome 25</td>			<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 57%">34</div></td></tr>
+<tr><td>SGS3 / Chrome 25</td>			<td>sbperftest / webgl</td>			<td class="perfscore"><div class="perfbar" style="width: 67%">40</div></td></tr>
+<tr><td>SGS3 / CocoonJS</td>			<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 93%">56</div></td></tr>
+<tr><td>Nexus7 / Chrome 25</td>			<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 57%">34</div></td></tr>
+<tr><td>Nexus7 / Chrome 25</td>			<td>sbperftest / webgl</td>			<td class="perfscore"><div class="perfbar" style="width: 90%">54</div></td></tr>
+<tr><td>Nexus7 / CocoonJS</td>			<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 78%">47</div></td></tr>
+<tr><td>iPad2 / Safari</td>				<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 87%">52</div></td></tr>
+<tr><td>iPad2 / CocoonJS</td>			<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 95%">57</div></td></tr>
+<tr><td>iPad3 / Safari</td>				<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 80%">48</div></td></tr>
+<tr><td>iPad3 / CocoonJS</td>			<td>sbperftest / canvas2d</td>		<td class="perfscore"><div class="perfbar" style="width: 93%">56</div></td></tr>
+</tbody></table>
+
+</body></html>

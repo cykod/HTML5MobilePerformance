@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Mobile Performance Optimization</title>
+<meta name="viewport" content="width=device-width, user-scalable=0,  initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+ <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="./apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon-57x57-precomposed.png">
+    <meta property="og:title" content="HTML5 Mobile Performance Optimization"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://www.html5gamedevelopment.com/HTML5MobilePerformance/"/>
+    <meta property="og:image" content="http://www.html5gamedevelopment.com/HTML5MobilePerformance/icon.png"/>
+    <meta property="og:site_name" content="HTML5 Game Development"/>
+    <meta property="og:description"
+          content="An overview of optimizing mobile games for HTML5 Performance"/>
+<script> 
+  var _gaq = _gaq || [];
+</script>
+
+<!-- 1024x748 for iPad in Landscape mode. -->
+<link rel="apple-touch-startup-image" media="(max-device-width: 1024px) and (orientation: landscape)" href="./startup-image.png" />
+
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<script type="text/javascript" src="//use.typekit.net/bct5aak.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script src='lib/stats.js'></script>
+<script src='lib/quintus.js'></script>
+<script src='lib/quintus_sprites.js'></script>
+<script src='lib/quintus_input.js'></script>
+<script src='lib/quintus_scenes.js'></script>
+<script src='lib/quintus_touch.js'></script>
+<script src='lib/quintus_anim.js'></script>
+<script src='lib/quintus_2d.js'></script>
+<script src='lib/quintus_ui.js'></script>
+<script src='lib/quintus_dom.js'></script>
+
+
+<script src='webAudioApiForDesigners.js'></script>
+<script src='lib/quintus_audio.js'></script>
+
+<script src='gamenote.js'></script>
+<script src='presentation.js'></script>
+<style>
+body { margin:0 auto; }
+ canvas {
+   z-index:0;
+ }
+
+#attribution { 
+  position:absolute; bottom:0px;
+  right:0px;
+  font-family:proxima-nova;
+  opacity:0.5;
+  color:#666;
+}
+
+#attribution a {
+  color:#666;
+  text-decoration:none;
+}
+
+
+#loading {
+  font-weight:bold;
+  margin:50px auto;
+  max-width:1024px;
+  position:fixed;
+  width:100%;
+  height:100%;
+  text-align:center;
+  font-family:proxima-nova;
+}
+
+#loading_container {
+  position:relative;
+  margin:0 auto;
+  width:50%;
+  height:20px;
+  border:1px solid black;
+  text-align:center;
+  padding-top:10px;
+}
+
+#loading_progress {
+  width:0%;
+  background-color:red;
+  position:absolute;
+  height:30px;
+  top:0px;
+  opacity:0.4;
+
+}
+
+</style>
+</head>
+<body>
+<div style='max-width:1024px;margin:0 auto;position:relative;'>
+<div style='z-index:5;left:5px;top:5px;position:absolute;' id='social'>
+<!-- AddThis Button BEGIN -->
+<script>
+ var addthis_share =
+{
+  url: "http://www.html5gamedevelopment.com/HTML5MobilePerformance/"
+}
+</script>
+
+
+<div id='loading'>
+  <div id='loading_container'>
+    Loading...
+    <div id='loading_progress'></div>
+  </div>
+</div>
+
+<!-- 
+<div class="addthis_toolbox addthis_default_style ">
+  <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+  <a class="addthis_button_tweet"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" async="true" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e5d96511b13dffd"></script>
+</div>
+</div -->
+<!-- AddThis Button END -->
+<!-- div id='attribution'>
+  Copyright &copy;2012 <a href='http://cykod.com'>Cykod LLC.</a> &amp; <a href='http://www.html5gamedevelopment.com'>HTML5GameDevelopment.com</a> | <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a>
+
+</div -->
+<script type='text/javascript'>
+  _gaq.push(['_setAccount', 'UA-2011791-33']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 
+        'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+  })();
+</script>
+
+</body>
+</html>
